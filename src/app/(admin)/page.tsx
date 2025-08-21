@@ -12,8 +12,8 @@ import { CardCarousel } from "@/components/ui/card-carousel";
 
 export const metadata: Metadata = {
   title:
-    "Next.js E-commerce Dashboard | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js Home for TailAdmin Dashboard Template",
+    "Simplify School Management with Speed and Precision",
+  description: "Our platform streamlines administration, communication, and learning, helping schools run efficiently and stay connected. Manage students, teachers, and operations—all from one powerful dashboard.",
 };
 
 export default function Ecommerce() {
