@@ -6,6 +6,8 @@ import { useSidebar } from "@/context/SidebarContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState ,useEffect,useRef} from "react";
+import TextType from "@/TextAnimations/TextType/TextType";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
 const AppHeader: React.FC = () => {
   const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
@@ -121,7 +123,7 @@ const AppHeader: React.FC = () => {
           </button>
 
           <div className="hidden lg:block">
-            <form>
+            {/* <form>
               <div className="relative">
                 <span className="absolute -translate-y-1/2 left-4 top-1/2 pointer-events-none">
                   <svg
@@ -152,7 +154,15 @@ const AppHeader: React.FC = () => {
                   <span> K </span>
                 </button>
               </div>
-            </form>
+            </form> */}
+            <TextType
+             text={["Hello Student", "Your required to do all your assignments", "Clear all arears and dont make noise at campus"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+           
+            />
           </div>
         </div>
         <div
@@ -169,7 +179,13 @@ const AppHeader: React.FC = () => {
             {/* <!-- Notification Menu Area --> */}
           </div>
           {/* <!-- User Area --> */}
-          <UserDropdown /> 
+          {/* <UserDropdown />  */}
+          <SignedOut>
+              <SignInButton />
+            </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
     
         </div>
       </div>

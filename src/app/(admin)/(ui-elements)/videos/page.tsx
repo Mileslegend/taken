@@ -1,3 +1,4 @@
+import LetterGlitch from "@/Backgrounds/LetterGlitch/LetterGlitch";
 import PageBreadcrumb from "@/components/common/PageBreadCrumb";
 import VideosExample from "@/components/ui/video/VideosExample";
 import { Metadata } from "next";
@@ -14,7 +15,13 @@ export default function VideoPage() {
     <div>
       <PageBreadcrumb pageTitle="Videos" />
 
-      <VideosExample />
+      {/* <VideosExample /> */}
+      <LetterGlitch
+  glitchSpeed={50}
+  centerVignette={true}
+  outerVignette={false}
+  smooth={true}
+/>
     </div>
   );
 }

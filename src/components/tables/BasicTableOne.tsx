@@ -17,12 +17,12 @@ interface Order {
     name: string;
     role: string;
   };
-  projectName: string;
+  department: string;
   team: {
     images: string[];
   };
   status: string;
-  budget: string;
+  
 }
 
 // Define the table data using the interface
@@ -32,9 +32,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-17.jpg",
       name: "Lindsey Curtis",
-      role: "Web Designer",
+      role: "Head of Department",
     },
-    projectName: "Agency Website",
+    department: "Chemistry",
     team: {
       images: [
         "/images/user/user-22.jpg",
@@ -42,7 +42,7 @@ const tableData: Order[] = [
         "/images/user/user-24.jpg",
       ],
     },
-    budget: "3.9K",
+    
     status: "Active",
   },
   {
@@ -50,13 +50,13 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-18.jpg",
       name: "Kaiya George",
-      role: "Project Manager",
+      role: "Dean",
     },
-    projectName: "Technology",
+    department: "Physics",
     team: {
       images: ["/images/user/user-25.jpg", "/images/user/user-26.jpg"],
     },
-    budget: "24.9K",
+    
     status: "Pending",
   },
   {
@@ -64,13 +64,13 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-17.jpg",
       name: "Zain Geidt",
-      role: "Content Writing",
+      role: "Senior Lecturer",
     },
-    projectName: "Blog Writing",
+    department: "Computing",
     team: {
       images: ["/images/user/user-27.jpg"],
     },
-    budget: "12.7K",
+    
     status: "Active",
   },
   {
@@ -78,9 +78,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-20.jpg",
       name: "Abram Schleifer",
-      role: "Digital Marketer",
+      role: "Lecturer",
     },
-    projectName: "Social Media",
+    department: "Chemistry",
     team: {
       images: [
         "/images/user/user-28.jpg",
@@ -88,7 +88,7 @@ const tableData: Order[] = [
         "/images/user/user-30.jpg",
       ],
     },
-    budget: "2.8K",
+    
     status: "Cancel",
   },
   {
@@ -96,9 +96,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-21.jpg",
       name: "Carla George",
-      role: "Front-end Developer",
+      role: "Senior Lecturer",
     },
-    projectName: "Website",
+    department: "Physics",
     team: {
       images: [
         "/images/user/user-31.jpg",
@@ -106,7 +106,7 @@ const tableData: Order[] = [
         "/images/user/user-33.jpg",
       ],
     },
-    budget: "4.5K",
+    
     status: "Active",
   },
 ];
@@ -124,13 +124,13 @@ export default function BasicTableOne() {
                   isHeader
                   className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
                 >
-                  User
+                  Name
                 </TableCell>
                 <TableCell
                   isHeader
                   className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
                 >
-                  Project Name
+                  Department
                 </TableCell>
                 <TableCell
                   isHeader
@@ -144,12 +144,12 @@ export default function BasicTableOne() {
                 >
                   Status
                 </TableCell>
-                <TableCell
+                {/* <TableCell
                   isHeader
                   className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
                 >
                   Budget
-                </TableCell>
+                </TableCell> */}
               </TableRow>
             </TableHeader>
 
@@ -178,7 +178,7 @@ export default function BasicTableOne() {
                     </div>
                   </TableCell>
                   <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                    {order.projectName}
+                    {order.department}
                   </TableCell>
                   <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
                     <div className="flex -space-x-2">
@@ -212,9 +212,9 @@ export default function BasicTableOne() {
                       {order.status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="px-4 py-3 text-gray-500 text-theme-sm dark:text-gray-400">
+                  {/* <TableCell className="px-4 py-3 text-gray-500 text-theme-sm dark:text-gray-400">
                     {order.budget}
-                  </TableCell>
+                  </TableCell> */}
                 </TableRow>
               ))}
             </TableBody>
